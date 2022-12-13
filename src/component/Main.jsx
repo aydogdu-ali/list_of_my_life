@@ -1,8 +1,13 @@
 import React from 'react'
+import Addtodo from './Addtodo'
+import Listtodo from './Listtodo'
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <div className='container'>
+        <Addtodo/>
+        <Listtodo/>
+    </div>
   )
 }
 
