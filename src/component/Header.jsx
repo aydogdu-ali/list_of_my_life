@@ -5,39 +5,42 @@ import İlkbahar from "../assets/ilkbahar.jpg";
 import Kis from "../assets/kis.jpg";
 import Sonbahar from "../assets/sonbahar.jpg";
 import Yaz from "../assets/yaz.jpg";
+import "./header.css"
 
 const Header = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-5">
+     
       <div className="row">
         <div className="col-2">
-          <img src={Bebek} alt="Bebek" width="50px" />
+          <img src={Bebek} alt="Bebek"  />
         </div>
-        <div className="col-1 d-flex justify-content-center ">
-          <div className="bg-primary w-25 h-100"> </div>
-          <div className="bg-success w-25 h-100"> </div>
-        </div>
-        <div className="col-1">
-          <img src={İlkbahar} alt="Bebek" width="50px" />
-        </div>
-        <div className="col-2">
-          <img src={Yaz} alt="Bebek" width="50px" />
-        </div>
-        <div className="col-2">
-          <img src={Sonbahar} alt="Bebek" width="50px" />
+        <div className="col-1 way   ">
+          <div className=" way1 "> </div>
+          <div className="way2 "> </div>
         </div>
         <div className="col-1">
-          <img src={Kis} alt="Bebek" width="50px" />
-        </div>
-        <div className="col-1 d-flex ">
-          <div className="bg-primary w-25 h-100"> </div>
-          <div className="bg-primary w-25 h-100"> </div>
+          <img src={İlkbahar} alt="Bebek"  />
         </div>
         <div className="col-2">
-          <img src={Older} alt="Bebek" width="50px" />
+          <img src={Yaz} alt="Bebek"  />
+        </div>
+        <div className="col-2">
+          <img src={Sonbahar} alt="Bebek" />
+        </div>
+        <div className="col-1">
+          <img src={Kis} alt="Bebek" />
+        </div>
+        <div className="col-1 way  ">
+          <div className="way3"> </div>
+          <div className="way4"> </div>
+        </div>
+        <div className="col-2">
+          <img src={Older} alt="Bebek"  />
         </div>
       </div>
-    </div>
+      </div>
+   
   );
 };
 

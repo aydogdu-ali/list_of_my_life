@@ -1,54 +1,68 @@
-import React, { useState,useRef,useEffect } from "react";
-
+import React, { useEffect, useState } from "react";
+import Listtodo from "./Listtodo";
 
 const Addtodo = () => {
-  const select = useRef();
-  const [todo, setTodo] = useState("");
-  const [categori, setCategori] = useState("");
-  const handleChange = (e) => {
-    setTodo(e.target.id);
-    console.log(todo);
-  };
+  const kategori = [
+    "--Kategori Seçiniz--",
+    "Aile",
+    "Sosyal Hayat",
+    "Eğitim",
+    "İş Hayati",
+  ];
 
-  const handleCategori = (e) => {
-    setCategori((e.target.value));
-    console.log(categori);
-  };
+  const [text, setText] = useState("");
+  const [categori, setCategori] = useState("");
+  const [todo, setTodo] = useState([]);
 
   useEffect(() => {
-    console.log(select.current.value);
-  }, []);
+console.log(categori)
 
-  const kategori = ["Aile", "Sosyal Hayat", "Eğitim", "İş Hayati"];
+  }, [categori,todo]);
 
+  const handleChange = (e) => {
+   
+    setText(e.target.value);
+    console.log(text);
+  };
+
+  const handleKategori = (e) => {
+    setCategori(e.target.value);
+    // console.log(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTodo([
+      ...todo,
+      { text: text, categori: categori, id: new Date().getMilliseconds() },
+    ]);
+
+    setText("");
+    setCategori("");
+    
+  };
+  console.log(todo)
   return (
     <div>
-      <form>
-        <input type="text" value={todo} onChange={handleChange} />
-       
-        <select ref={select}
-          onChange={handleCategori}>
-           <option >
-               
-              Kategori Şeçiniz
-             </option>
-          {kategori?.map((categori, index) => {
-            return (
-              <option key={(index)} value={categori }>
-               
-                {categori }
-              </option>
-            );
-          })}
-        </select>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={text} onChange={handleChange} />
 
-        
+        <div>
+          {" "}
+          <select value={categori} onChange={handleKategori}>
+            {kategori?.map((item) => {
+              return (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+        </div>
 
         <button className="btn btn-success"> Ekle</button>
-
-        <button className="btn btn-warning"> Düzenle</button>
-        <button className="btn btn-danger"> Sil</button>
       </form>
+      <Listtodo todo = {todo} />
     </div>
   );
 };

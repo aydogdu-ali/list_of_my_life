@@ -1,0 +1,53 @@
+.way{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3;
+}
+
+.way1 {
+    width:6rem;
+    height: 0.25rem;
+    background: rgb(87, 70, 70);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+
+  .way2 {
+    width:6rem;
+    height: 0.25rem;
+    background: rgb(93, 76, 76);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .way3 {
+    width:6rem;
+    height: 0.25rem;
+    background: rgb(87, 70, 70);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+
+  .way4 {
+    width:6rem;
+    height: 0.25rem;
+    background: rgb(63, 53, 53);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo-wrapper{
+    text-align: center;
+  }
+
+
+  img{
+   border-radius: 50%;
+    width: 100%;
+    
+    
+    
+  }
